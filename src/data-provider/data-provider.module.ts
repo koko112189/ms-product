@@ -18,9 +18,11 @@ import { IServiceTracingProvider } from './provider/service-tracing.provider';
 import { ServiceTracingProvider } from './provider/impl/service-tracing.provider.impl';
 import { IServiceTracingUc } from 'src/core/use-case/service-tracing.resource.uc';
 import { ServiceTracingUcimpl } from 'src/core/use-case/impl/service-tracing.resource.uc.impl';
+import { AuthModule } from 'src/auth/auth.module';
 
 @Module({
     imports: [
+        AuthModule,
         TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
         TypeOrmModule.forFeature([ItemEntity, CategoryEntity, InventoryEntity, MessageEntity, ServiceErrorEntity, ServiceTracingEntity])
     ],

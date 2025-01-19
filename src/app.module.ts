@@ -5,10 +5,11 @@ import { CoreModule } from './core/core.module';
 import { DataProviderModule } from './data-provider/data-provider.module';
 import { ExceptionManager } from './common/lib/exceptions-manager.filter';
 import { RequestHttpInterceptor } from './controller/interceptor/request-http.interceptor';
+import { AuthModule } from './auth/auth.module';
 
 
 @Module({
-  imports: [CommonModule, ControllerModule, CoreModule, DataProviderModule],
+  imports: [CommonModule, ControllerModule, CoreModule, DataProviderModule, AuthModule],
   controllers: [],
   providers: [{
     provide: 'APP_FILTER',

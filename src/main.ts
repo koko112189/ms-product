@@ -13,7 +13,11 @@ async function bootstrap() {
   
 
   const app = await NestFactory.create(AppModule,{
-    cors: true,
+    cors: {
+      origin: 'http://localhost:3000',
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      allowedHeaders: ['Content-Type', 'Authorization'],
+    },
     bufferLogs: true
   });
   app.useGlobalPipes(new ValidationPipe({ forbidUnknownValues: true, forbidNonWhitelisted: true, whitelist: true }));

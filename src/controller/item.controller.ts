@@ -7,6 +7,7 @@ import { ItemDto } from "./dto/item/item.dto";
 import { ItemUpdateDto } from "./dto/item/itemUpdate.dto";
 import GeneralUtils from "src/common/utils/general-utils";
 import { Etask, EtaskDesc } from "src/common/utils/enums/task.enum";
+import { ResponseService } from "./dto/response-service.dto";
 
 @ApiTags('Item')
 @Controller('item')
@@ -17,7 +18,7 @@ export class ItemController {
     @Get()
     @ApiOperation({ summary: 'Get all items products' })
     async findAll() {
-        return this.itemService.findAll();
+        return new ResponseService(true, 'Get all items', 200, await this.itemService.findAll());
     }
     
     @Get('/:id')

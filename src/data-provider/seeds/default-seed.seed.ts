@@ -74,9 +74,9 @@ export const CategorySeedData = [
       sku: randomUUID(),
       name: 'fake name' + randomUUID(),
       description: 'lorem ipsum',
-      basePrice: Math.floor(Math.random() * 1000), // 0-999
-      costPrice: Math.floor(Math.random() * 800),  // 0-799
-      discountPrice: Math.floor(Math.random() * 500), // 0-499
+      basePrice: Math.floor(Math.random() * 100000), // 0-999
+      costPrice: Math.floor(Math.random() * 80000),  // 0-799
+      discountPrice: Math.floor(Math.random() * 5000), // 0-499
       category: category,
       isActive: true,
       createdBy: 'Seeder',
